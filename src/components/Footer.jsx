@@ -25,7 +25,7 @@ const Footer = () => {
             </div>
             <div className='flex flex-col max-w-[1400px] px-2 py-4 mx-auto justify-between sm:flex-row text-center text-blue-200'>
                 <p className='py-4'>©2024 Hospital NCT Website. All rights reserved.</p>
-                <div className='flex justify-between sm:w-[300px-pt-4 px-2 text-3xl'>
+                <div className='flex justify-between sm:w-[300px-pt-4 px-2 gap-6 text-3xl'>
                     <FaFacebook size={30}/>
                     <FaInstagram size={30}/>
                     <FaTwitter size={30}/>

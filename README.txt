@@ -1,6 +1,8 @@
-[EJERCICIO PRACTICO 1, MODULO 4]
+[EJERCICIO PRACTICO 2, MODULO 4]
 
-Este ejercicio se llevó a cabo haciendo una página totalmente de 0, utilizando React.
+Este ejercicio se llevó a cabo optimizando la página creada en el ejercicio práctico 1, haciendo uso del ReactDOM, PropTypes y Profiler.
+
+[GITHUB: https://github.com/LeenahJz/EJERCICIOPRAC1.git]
 
 Estructura
 
@@ -18,8 +20,11 @@ ejercicioPractico1
 │   │   ├── Homepage.jsx
 │   │   ├── Navbar.jsx
 │   │   └── ServiceList.jsx
+│   ├── HOC
+│   │   └── withLogger.jsx
 │   ├── App.css
 │   ├── App.jsx
+│   ├── Context.jsx
 │   ├── index.css
 │   └── main.jsx
 ├── .gitignore
@@ -33,48 +38,48 @@ ejercicioPractico1
 
 Es código cumple con los requisitos solicitados siguientes:
 
-1. Creación de Componentes en ReactJS (1.5 puntos)
-- Crea los siguientes componentes reutilizables para la aplicación del hospital:
-- DoctorCard: Muestra la información de un doctor (nombre, especialidad, años
-de experiencia).
-- ServiceList: Lista los servicios médicos disponibles en el hospital.
-- AppointmentForm: Un formulario para que los usuarios agenden una cita con
-un doctor.
+1. Manejo del DOM Virtual en ReactJS
+- Implementa una sección del sistema del hospital donde se gestione eficientemente la
+renderización de datos utilizando el DOM Virtual.
+- Explica cómo ReactJS utiliza el DOM virtual para mejorar el rendimiento de la
+interfaz del hospital (secciones como listado de doctores o servicios).
+- Implementa componentDidMount o el uso de useEffect para gestionar la
+actualización del DOM al cargar los datos.
 
-2. Uso de JSX para Renderización de Datos (1 punto)
-- Utiliza JSX para crear la estructura visual de los componentes. Asegúrate de:
-- Insertar expresiones JSX para mostrar los datos dinámicos de los doctores,
-servicios y citas.
-- Utilizar correctamente atributos en JSX y evitar errores comunes como el uso
-incorrecto de className en lugar de class.
+2. Creación y Uso de Referencias en React
+- Utiliza referencias en uno de los componentes para manipular elementos del DOM
+directamente. Por ejemplo:
+- Crea una referencia para controlar un campo de formulario en el que los
+usuarios agendan citas o consultas médicas.
+- Usa referencias mediante callback para interactuar con elementos del DOM
+cuando se realiza alguna acción del usuario (como enfocar un campo en el
+formulario de contacto del hospital).
 
-3. Flujo de Datos con Props (1 punto)
-- Implementa props para pasar datos entre los componentes:
-- Pasa los datos de doctores al componente DoctorCard desde el componente
+3. Uso de Fragmentos y Contexto en ReactJS 
+- Usa Fragmentos (<React.Fragment>) para evitar elementos innecesarios en el DOM
+y mejorar la estructura del código en el sistema del hospital.
+- Utiliza Context para gestionar el estado global de la aplicación, como el acceso
+a los datos de un usuario o doctor a lo largo de la aplicación sin necesidad de
+pasar props entre múltiples componentes.
+
+4. Verificación de Tipos con PropTypes
+- Implementa PropTypes para verificar el tipo de datos que se pasan a los componentes
+DoctorCard, ServiceList, y AppointmentForm.
+- Asegúrate de que los tipos de datos como strings, arrays y objetos se validen
+correctamente y muestra un mensaje de error en caso de que el tipo de dato no
+sea el correcto.
+
+5. Uso de Componentes de Orden Superior y Portales
+- Implementa un Componente de Orden Superior (HOC) para reutilizar la lógica de un
+componente en otras secciones del sistema.
+- Crea un portal para renderizar un modal que muestre información detallada de
+un doctor o servicio en una capa superior sin interferir con la estructura del DOM
 principal.
-- Pasa los datos de servicios al componente ServiceList desde el componente
-principal.
-- Usa props para manejar los datos de entrada en el formulario de citas
-(AppointmentForm), como el nombre del paciente y el doctor seleccionado.
 
-4. Listas y Keys en React (1 punto)
-- Utiliza correctamente listas y keys en React para renderizar dinámicamente la lista de
-doctores y servicios.
-- Asegúrate de que cada ítem de la lista tenga una key única para optimizar el
-rendimiento de la aplicación.
-
-5. Formulario con Manejo de Estado (1 punto)
-- Crea el formulario de citas (AppointmentForm) y utiliza Hooks como useState
-para manejar los datos del formulario (nombre del paciente, especialidad del doctor,
-fecha de la cita).
-- Al enviar el formulario, muestra los datos ingresados en la consola del
-navegador o en la interfaz.
-
-6. Introducción a Hooks y Ciclo de Vida (1.5 puntos)
-- Utiliza Hooks para manejar el ciclo de vida de los componentes:
-- Usa useEffect para cargar la lista de doctores y servicios cuando el
-componente principal se monta en el DOM.
-- Usa useState para manejar
+6. Optimización de Rendimiento y Profiler en ReactJS
+- Uso de herramientas de optimización de ReactJS como Profiler para identificar cuellos de botella en la renderización y mejorar el rendimiento del sistema del hospital,
+especialmente en secciones que cargan muchos datos, como el listado de doctores o
+citas.
 
 -Créditos-
 Imágenes de Google
